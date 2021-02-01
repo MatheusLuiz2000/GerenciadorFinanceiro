@@ -8,7 +8,6 @@ import CopyRight from '../components/CopyRight';
 export default function Routes() {
   return (
     <>
-      <CopyRight />
       <Switch>
         <Route path="/" exact component={Users} />
         <Route path="/user/:user" exact component={User} />
