@@ -10,6 +10,7 @@ import { getCountTransactions } from '~/services/api';
 
 export default function Content({ children, title }) {
   const [leftMenu, setLeftMenu] = useState(false);
+  const user = JSON.parse(localStorage.getItem('user'));
 
   const [information, setInformation] = useState('');
 
@@ -43,17 +44,20 @@ export default function Content({ children, title }) {
     <>
       <Menu leftMenu={leftMenu} handleMenu={handleMenu} />
       <TopMenu handleMenu={handleMenu} />
+
       <Grid container p="20px">
-        <Grid container justifyContent="flex-end" spacing={6}>
-          <Card
-            label="Current balance"
-            value={substract}
-            icon={<AttachMoneyIcon />}
-            type="primary"
-          />
-          <Card label="Expenses" value={purchase} icon={<AddIcon />} />
-          <Card label="Incomes" value={deposit} icon={<AddIcon />} />
-        </Grid>
+        {user.type !== 1 && (
+          <Grid container justifyContent="flex-end" spacing={6}>
+            <Card
+              label="Current balance"
+              value={substract}
+              icon={<AttachMoneyIcon />}
+              type="primary"
+            />
+            <Card label="Expenses" value={purchase} icon={<AddIcon />} />
+            <Card label="Incomes" value={deposit} icon={<AddIcon />} />
+          </Grid>
+        )}
         <Typography variant="h3" sx={HomeStyles.titleList} mb={4}>
           {title}
         </Typography>
