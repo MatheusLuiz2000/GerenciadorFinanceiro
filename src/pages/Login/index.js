@@ -25,7 +25,7 @@ export default function Login() {
       localStorage.setItem('access_token', makeLogin.data.access_token);
       localStorage.setItem('user', JSON.stringify(makeLogin.data.user));
 
-      return history.push('/home');
+      return (window.location.href = '/home');
     },
     [history]
   );

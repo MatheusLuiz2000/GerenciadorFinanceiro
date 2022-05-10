@@ -1,1 +1,3 @@
-See the .ENV.EXAMPLE and add the file .env in the project
+Test:
+
+Admin route: /admin/checklist

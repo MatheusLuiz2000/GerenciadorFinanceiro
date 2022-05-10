@@ -25,7 +25,7 @@ export default function SignUp() {
       localStorage.setItem('access_token', createAccount.data.access_token);
       localStorage.setItem('user', JSON.stringify(createAccount.data.user));
 
-      return history.push('/home');
+      return (window.location.href = '/home');
     },
     [history]
   );
