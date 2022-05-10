@@ -29,7 +29,9 @@ export default function ModalAddPurchase({
         return toast.error(addNew.data.message, toastConfig);
       }
 
-      return handleModalPurchhase();
+      handleModalPurchhase();
+
+      return window.location.reload();
     },
     [handleModalPurchhase]
   );
