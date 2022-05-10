@@ -25,8 +25,8 @@ export default function TopMenu({ handleMenu }) {
     localStorage.removeItem('user');
     localStorage.removeItem('access_token');
 
-    return history.push('/login');
-  }, [history]);
+    return (window.location.href = '/login');
+  }, []);
 
   return (
     <Grid container justifyContent="space-between" sx={topMenuStyles.container}>
