@@ -35,7 +35,7 @@ export default function TopMenu({ handleMenu }) {
           <MenuIcon />
         </Button>
       </Grid>
-      <Grid item xs={2}>
+      <Grid item md={3} xs={6}>
         <Grid container alignItems="center" justifyContent="flex-end">
           <AccountCircleIcon />
           <Typography variant="h3" sx={topMenuStyles.nameUser}>

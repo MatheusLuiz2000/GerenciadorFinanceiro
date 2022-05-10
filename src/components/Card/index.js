@@ -80,7 +80,7 @@ export default function Card({ label, value, icon }) {
         handleModalAddCheckDeposit={handleModalAddCheckDeposit}
         openModalAddCheckDeposit={openModalAddCheckDeposit}
       />
-      <Grid item xs={3} sx={{ width: '250px' }}>
+      <Grid item md={3} xs={12} sx={{ width: '250px' }}>
         <Box sx={HomeStyles.boxContainer}>
           <Grid container justifyContent="space-between" alignItems="center">
             <Grid item xs={8}>
