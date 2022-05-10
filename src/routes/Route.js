@@ -12,11 +12,12 @@ export default function RouteWrapper({
     const accessToken = localStorage.getItem('access_token');
     const user = JSON.parse(localStorage.getItem('user'));
 
-    if (!accessToken || !user) return <Redirect to="/" />;
+    if (!accessToken || !user) return (window.location.href = '/');
 
-    if (!isAdmin && user.type === 1) return <Redirect to="/admin/checklist" />;
+    if (!isAdmin && user.type === 1)
+      return (window.location.href = '/admin/checklist');
 
-    if (isAdmin && user.type !== 1) return <Redirect to="/home" />;
+    if (isAdmin && user.type !== 1) return (window.location.href = '/home');
   }
 
   return <Route {...rest} component={Component} />;
